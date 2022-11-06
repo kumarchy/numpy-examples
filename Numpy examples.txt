@@ -1,0 +1,269 @@
+# welcome to  numpy tutorial
+
+
+import numpy as np
+
+list=[1,2,3,4,5]
+arr=np.array(list)
+
+arr
+
+arr.shape
+
+print(list)
+
+list1=[1,2,3,4,5]
+list2=[2,4,5,6,7]
+list3=[7,8,9,4,5]
+arr=np.array([list1,list2,list3])
+
+arr
+
+arr.shape
+
+arr.reshape(5,3)
+
+
+arr[:]
+
+arr[0:2,2:4]
+
+#next
+arr=np.arange(0,10,step=2)
+
+arr
+
+#next
+np.linspace(1,10,50)
+
+list=[1,2,3,4,5,6,47,8,9]
+arr=np.array(list)
+
+#cpy functio and broadcasting , replacing numbr from the point
+arr[3:]=100
+
+arr
+
+arr1=arr
+
+arr1[3:]=500
+
+arr1
+
+arr
+
+arr1=arr.copy()
+
+
+print(arr1)
+arr1[3:]=1000
+print(arr1)
+
+#some conditions very useful in exploratory data analysis
+val=2
+arr/2
+
+val=2
+arr[arr>2]
+
+#next
+np.ones(4,dtype=int)
+
+np.ones((2,5),dtype=float)
+
+#random distribution
+np.random.rand(3,3)
+
+#from standard normal distribution
+arr_ex=np.random.randn(4,4)
+
+arr_ex
+
+#for 8 random no. between 0 to 100
+np.random.randint(0,100,8).reshape(2,4)
+
+#next it shows the values between 0.1 to 1.0
+np.random.random_sample((1,5))
+
+import seaborn as sns
+import pandas as pd
+
+sns.distplot(pd.DataFrame(arr_ex.reshape(16,1)));
+
+# NUMPY TUTORIAL BY HARRY BHAI
+
+import numpy as np
+
+myarr=np.array([3,6,32,7])
+
+myarr
+
+myarr=np.array([3,6,32,7],np.int64)
+
+myarr
+
+myarr=np.array([[3,6,32,7]],np.int64)
+myarr[0]
+
+myarr.shape
+
+myarr.dtype
+
+myarr[0,1]
+
+myarr[0,1]=64
+myarr
+
+#  Array creation:Conversion from other Python structures
+
+listarray=np.array([[1,2,3],[0,1,4],[7,8,9]])
+listarray
+
+listarray.dtype
+
+listarray.shape
+
+listarray.size
+
+np.array({14,25,58})
+
+zeros=np.zeros((2,5))
+zeros
+
+zeros.shape
+
+zeros.dtype
+
+rng=np.arange(15)
+rng
+
+lspace=np.linspace(1,5,6)
+lspace
+
+emp=np.empty((4,6))
+emp
+
+#it copies the sizes of previous array and make it as empty array
+emp_like=np.empty_like(lspace)
+emp_like
+
+ide=np.identity(45)
+ide
+
+ide.shape
+
+arr=np.arange(99)
+arr
+
+arr=arr.reshape(3,33)
+arr
+
+arr.ravel()
+
+arr.shape
+
+x=[[1,2,3],[4,5,6],[7,1,0]]
+ar=np.array(x)
+ar
+
+ar.sum(axis=0)
+
+ar.sum(axis=1)
+
+ar.T
+
+ar.flat
+
+for item in ar.flat:
+    print(item)
+
+ar.ndim
+
+ar.size
+
+ar.nbytes
+
+#if paranthesis is present ,it is called as fuctions
+one=np.array([1,2,4,5,77,35,60])
+one.argmax()
+
+one.argmin()
+
+one.argsort()
+
+ar
+
+ar.argmin()
+
+ar.argmax()
+
+#it determines the maximum number on the basis of each column
+ar.argmax(axis=0)
+
+ar.argmax(axis=1)
+
+ar.argsort(axis=0)
+
+
+
+ar.argsort(axis=1)
+
+ar.ravel()
+
+ar.reshape((9,1))
+
+ar.reshape((9,))
+
+ar
+
+ar2=np.array([[0, 2, 3],
+             [4, 7, 6],
+             [7, 0, 5]])
+
+#sum of matrix
+ar+ar2
+
+#multiply of two matrix
+ar*ar2
+
+#square root of matrix
+np.sqrt(ar)
+
+ar.sum()
+
+ar.max()
+
+ar.min()
+
+ar
+
+np.where(ar>5)
+
+type(np.where(ar>5))
+
+np.count_nonzero(ar)
+
+np.nonzero(ar)
+
+ar[1,2]=0
+np.nonzero(ar)
+
+import sys
+
+py_ar=[0,4,55,2]
+
+np_ar=np.array(py_ar)
+
+sys.getsizeof(1)*len(py_ar)
+
+np_ar.itemsize*np_ar.size
+
+np_ar.tolist()
+
+# for all these sources:numpy array methods and attributes ,google it
+
+y = np.reshape(np.arange(2*3*4), (2,3,4))
+y
+
+
+y.strides
